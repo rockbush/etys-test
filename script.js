@@ -14,6 +14,19 @@ const fields = [
   "offsiteRate",
 ];
 
+let calculatorTracked = false;
+
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", name, {
+    event_category: "engagement",
+    ...params,
+  });
+}
+
 function value(id) {
   return Number(document.getElementById(id).value) || 0;
 }
@@ -178,9 +191,15 @@ async function handleWaitlist(event) {
       throw new Error("Form service returned an error.");
     }
 
+    trackEvent("waitlist_submitted", {
+      shop_type: shopType,
+      monthly_sales: monthlySales,
+      wanted_feature: wantedFeature,
+    });
     status.textContent = "You're on the early access list. Check your inbox if this is the first test submission.";
     form.reset();
   } catch (error) {
+    trackEvent("waitlist_submit_failed");
     status.textContent = "Saved locally, but email delivery needs another try. Please submit again in a minute.";
   } finally {
     button.disabled = false;
@@ -188,11 +207,31 @@ async function handleWaitlist(event) {
 }
 
 fields.forEach((id) => {
-  document.getElementById(id).addEventListener("input", calculateProfit);
+  document.getElementById(id).addEventListener("input", () => {
+    calculateProfit();
+    if (!calculatorTracked) {
+      calculatorTracked = true;
+      trackEvent("calculator_used", {
+        field_changed: id,
+      });
+    }
+  });
 });
 
-document.getElementById("generateListing").addEventListener("click", generateListing);
+document.getElementById("generateListing").addEventListener("click", () => {
+  generateListing();
+  trackEvent("listing_generated");
+});
 document.getElementById("waitlistForm").addEventListener("submit", handleWaitlist);
+
+document.querySelectorAll('a[href="#pricing"], a[href="#waitlist"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    trackEvent("cta_clicked", {
+      target: link.getAttribute("href"),
+      label: link.textContent.trim(),
+    });
+  });
+});
 
 calculateProfit();
 generateListing();

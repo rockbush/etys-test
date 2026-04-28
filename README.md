@@ -28,6 +28,7 @@ https://rockbush.github.io/etys-test/
 - Early access waitlist form prototype
 - Privacy Policy and Terms pages
 - Basic SEO, Open Graph, Twitter Card, and SoftwareApplication schema metadata
+- Google Analytics 4 tracking with core conversion events
 
 ## Waitlist Form
 
@@ -36,6 +37,18 @@ browser backup under `sellermarginWaitlist`.
 
 The first live submission may trigger a FormSubmit confirmation email. Open that email
 and confirm the address before sending real traffic.
+
+## Analytics
+
+Google Analytics 4 is configured with measurement ID `G-8YVQJDS0BV`.
+
+Tracked events:
+
+- `calculator_used`
+- `listing_generated`
+- `cta_clicked`
+- `waitlist_submitted`
+- `waitlist_submit_failed`
 
 ## Next Production Steps
 
