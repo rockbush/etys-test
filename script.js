@@ -122,14 +122,16 @@ function generateListing() {
   `;
 }
 
-function handleWaitlist(event) {
+async function handleWaitlist(event) {
   event.preventDefault();
 
+  const form = event.target;
   const email = document.getElementById("waitlistEmail").value.trim();
   const shopType = document.getElementById("shopType").value;
   const monthlySales = document.getElementById("monthlySales").value || "Not provided";
   const wantedFeature = document.getElementById("wantedFeature").value;
   const status = document.getElementById("waitlistStatus");
+  const button = form.querySelector("button[type='submit']");
 
   if (!email || !shopType) {
     status.textContent = "Add your email and shop type to join the early list.";
@@ -160,8 +162,29 @@ function handleWaitlist(event) {
   nextLeads.push(lead);
   localStorage.setItem("sellermarginWaitlist", JSON.stringify(nextLeads));
 
-  status.textContent = "You're on the early access list. Connect a form backend before public launch.";
-  event.target.reset();
+  status.textContent = "Submitting...";
+  button.disabled = true;
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: new FormData(form),
+    });
+
+    if (!response.ok) {
+      throw new Error("Form service returned an error.");
+    }
+
+    status.textContent = "You're on the early access list. Check your inbox if this is the first test submission.";
+    form.reset();
+  } catch (error) {
+    status.textContent = "Saved locally, but email delivery needs another try. Please submit again in a minute.";
+  } finally {
+    button.disabled = false;
+  }
 }
 
 fields.forEach((id) => {

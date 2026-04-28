@@ -76,6 +76,11 @@ a {
   cursor: pointer;
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
 .nav-cta,
 .button.primary {
   background: var(--green);

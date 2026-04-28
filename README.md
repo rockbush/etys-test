@@ -31,11 +31,11 @@ https://rockbush.github.io/etys-test/
 
 ## Waitlist Form
 
-The current waitlist form is a static MVP prototype. It validates the email and shop type,
-then saves the test submission to `localStorage` under `sellermarginWaitlist`.
+The waitlist form submits to FormSubmit at `rockbush2021@gmail.com` and keeps a local
+browser backup under `sellermarginWaitlist`.
 
-Before sending real traffic, connect the form to Tally, Airtable, Supabase, or another
-backend so submissions are collected outside the visitor's browser.
+The first live submission may trigger a FormSubmit confirmation email. Open that email
+and confirm the address before sending real traffic.
 
 ## Next Production Steps
 
