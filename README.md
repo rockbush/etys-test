@@ -16,6 +16,7 @@ https://rockbush.github.io/etys-test/
 - `privacy.html`: simple privacy policy for the static MVP
 - `terms.html`: simple terms page for the static MVP
 - `vercel.json`: static deployment settings for Vercel
+- `MARKETING_TEST_PLAN.md`: 7-day validation plan and promotion copy
 
 ## Current Features
 
