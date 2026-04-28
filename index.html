@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etsy Profit Calculator & AI Listing Generator | SellerMargin</title>
+    <meta
+      name="description"
+      content="Free Etsy profit calculator and AI listing toolkit for sellers. Estimate Etsy fees, net profit, margin, break-even price, titles, tags, and descriptions."
+    />
+    <meta
+      name="keywords"
+      content="Etsy profit calculator, Etsy fee calculator, Etsy listing generator, Etsy SEO tool, Etsy pricing calculator"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1f7a59" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Etsy Profit Calculator & AI Listing Generator" />
+    <meta
+      property="og:description"
+      content="Calculate Etsy profit before you list, then draft SEO-friendly titles, tags, and product descriptions."
+    />
+    <meta property="og:site_name" content="SellerMargin" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Etsy Profit Calculator & AI Listing Generator" />
+    <meta
+      name="twitter:description"
+      content="Free Etsy profit calculator and AI listing toolkit for handmade, POD, and digital product sellers."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SellerMargin",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "A free Etsy profit calculator and AI listing toolkit for estimating product margin and drafting listing copy.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#tool">SellerMargin</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#listing">AI Listing</a>
+        <a href="#seo">SEO Tools</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+      <a class="nav-cta" href="#waitlist">Early Access</a>
+    </header>
+
+    <main>
+      <section class="hero" id="tool">
+        <div class="hero-copy">
+          <p class="eyebrow">Profit-aware AI toolkit for Etsy sellers</p>
+          <h1>Etsy Profit Calculator + AI Listing Generator</h1>
+          <p class="hero-text">
+            Price your products with real Etsy fees, then generate SEO-ready titles, tags,
+            descriptions, and product copy from the same profit data.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#calculator">Calculate Profit</a>
+            <a class="button secondary" href="#listing">Generate Listing</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Profit preview">
+          <div class="metric">
+            <span>Net profit</span>
+            <strong id="heroProfit">$18.42</strong>
+          </div>
+          <div class="metric-row">
+            <div>
+              <span>Margin</span>
+              <strong id="heroMargin">36.8%</strong>
+            </div>
+            <div>
+              <span>Break-even</span>
+              <strong id="heroBreakEven">$22.31</strong>
+            </div>
+          </div>
+          <div class="mini-chart">
+            <span style="height: 56%"></span>
+            <span style="height: 72%"></span>
+            <span style="height: 42%"></span>
+            <span style="height: 86%"></span>
+            <span style="height: 64%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-grid" id="calculator">
+        <div class="panel input-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Free tool</p>
+            <h2>Etsy Profit Calculator</h2>
+          </div>
+
+          <form class="calculator-form" id="profitForm">
+            <label>
+              Product price
+              <input type="number" id="price" min="0" step="0.01" value="39.99" />
+            </label>
+            <label>
+              Shipping charged
+              <input type="number" id="shippingCharged" min="0" step="0.01" value="4.99" />
+            </label>
+            <label>
+              Product cost
+              <input type="number" id="productCost" min="0" step="0.01" value="11.50" />
+            </label>
+            <label>
+              Shipping cost
+              <input type="number" id="shippingCost" min="0" step="0.01" value="5.20" />
+            </label>
+            <label>
+              Packaging cost
+              <input type="number" id="packagingCost" min="0" step="0.01" value="1.10" />
+            </label>
+            <label>
+              Etsy ads cost
+              <input type="number" id="adsCost" min="0" step="0.01" value="2.00" />
+            </label>
+            <label>
+              Discount
+              <input type="number" id="discount" min="0" max="90" step="1" value="0" />
+            </label>
+            <label>
+              Offsite ads
+              <select id="offsiteRate">
+                <option value="0">None</option>
+                <option value="0.12">12%</option>
+                <option value="0.15">15%</option>
+              </select>
+            </label>
+          </form>
+        </div>
+
+        <div class="panel results-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Live result</p>
+            <h2>Profit Breakdown</h2>
+          </div>
+
+          <div class="result-main">
+            <span>Estimated net profit</span>
+            <strong id="netProfit">$0.00</strong>
+          </div>
+
+          <div class="result-list">
+            <div><span>Total revenue</span><strong id="totalRevenue">$0.00</strong></div>
+            <div><span>Etsy fees</span><strong id="etsyFees">$0.00</strong></div>
+            <div><span>Payment processing</span><strong id="paymentFee">$0.00</strong></div>
+            <div><span>Total costs</span><strong id="totalCosts">$0.00</strong></div>
+            <div><span>Profit margin</span><strong id="profitMargin">0%</strong></div>
+            <div><span>Break-even price</span><strong id="breakEven">$0.00</strong></div>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+        </div>
+      </section>
+
+      <section class="split-section" id="listing">
+        <div>
+          <p class="eyebrow">AI module prototype</p>
+          <h2>AI Etsy Listing Generator</h2>
+          <p>
+            This demo generates listing copy in the browser. In production, this section
+            should call OpenAI, Gemini, or OpenRouter and save generations to user history.
+          </p>
+          <div class="listing-controls">
+            <input id="productType" value="Personalized ceramic mug" aria-label="Product type" />
+            <input id="keywords" value="custom gift, coffee lover, birthday gift" aria-label="Keywords" />
+            <button class="button primary" id="generateListing" type="button">Generate</button>
+          </div>
+        </div>
+        <div class="panel output-panel">
+          <h3>Generated Listing</h3>
+          <div id="listingOutput"></div>
+        </div>
+      </section>
+
+      <section class="content-band" id="seo">
+        <div class="section-heading">
+          <p class="eyebrow">SEO plan</p>
+          <h2>Pages to Build First</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>/etsy-profit-calculator</h3>
+            <p>Main tool page targeting Etsy profit, pricing, and margin keywords.</p>
+          </article>
+          <article class="card">
+            <h3>/etsy-fee-calculator</h3>
+            <p>Simple fee calculator for transaction fee, listing fee, payment fee, and offsite ads.</p>
+          </article>
+          <article class="card">
+            <h3>/printify-etsy-profit-calculator</h3>
+            <p>POD-focused page with Printify cost, shipping, samples, and ad spend.</p>
+          </article>
+          <article class="card">
+            <h3>/etsy-listing-generator</h3>
+            <p>AI page for titles, 13 tags, descriptions, FAQ, and social captions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section affiliate">
+        <div>
+          <p class="eyebrow">Affiliate monetization</p>
+          <h2>Recommended Partner Slots</h2>
+          <p>
+            Place affiliate links only where they solve a real seller problem: POD production,
+            design assets, mockups, Etsy SEO, and cross-border business tools.
+          </p>
+        </div>
+        <div class="partner-list">
+          <div><strong>Printify / Printful</strong><span>POD calculator result page</span></div>
+          <div><strong>Canva / Creative Fabrica</strong><span>Listing generator result page</span></div>
+          <div><strong>eRank / Sale Samurai</strong><span>Etsy SEO article pages</span></div>
+          <div><strong>Payoneer / Wise</strong><span>Cross-border seller guide</span></div>
+        </div>
+      </section>
+
+      <section class="content-band" id="pricing">
+        <div class="section-heading">
+          <p class="eyebrow">Freemium model</p>
+          <h2>Pricing Draft</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Free</h3>
+            <strong>$0</strong>
+            <p>Unlimited calculator use and 3 AI generations per day.</p>
+          </article>
+          <article class="price-card featured">
+            <h3>Starter Credits</h3>
+            <strong>$9</strong>
+            <p>100 AI listing credits, full 13 tags, and saved generation history.</p>
+          </article>
+          <article class="price-card">
+            <h3>Pro</h3>
+            <strong>$19/mo</strong>
+            <p>500 generations, batch tools, POD calculator, and CSV export.</p>
+          </article>
+        </div>
+        <p class="payment-note">
+          China company payment path: start with PayPal China merchant account or Lemon Squeezy;
+          move to Stripe later through Hong Kong or US company setup if revenue is stable.
+        </p>
+      </section>
+
+      <section class="waitlist-section" id="waitlist">
+        <div class="waitlist-copy">
+          <p class="eyebrow">Early seller list</p>
+          <h2>Get launch access and pricing updates</h2>
+          <p>
+            Join the early list for SellerMargin. Tell us what you sell and which tool would
+            save you the most time, then use that signal to shape the next product build.
+          </p>
+        </div>
+        <form class="waitlist-form" id="waitlistForm">
+          <label>
+            Email
+            <input type="email" id="waitlistEmail" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Shop type
+            <select id="shopType" name="shopType" required>
+              <option value="">Select one</option>
+              <option>Handmade products</option>
+              <option>Digital products</option>
+              <option>Print on Demand</option>
+              <option>New Etsy seller</option>
+              <option>Other ecommerce seller</option>
+            </select>
+          </label>
+          <label>
+            Monthly sales
+            <select id="monthlySales" name="monthlySales">
+              <option value="">Prefer not to say</option>
+              <option>$0 - $500</option>
+              <option>$501 - $2,000</option>
+              <option>$2,001 - $10,000</option>
+              <option>$10,000+</option>
+            </select>
+          </label>
+          <label>
+            Most wanted feature
+            <select id="wantedFeature" name="wantedFeature">
+              <option>Profit calculator</option>
+              <option>AI listing generator</option>
+              <option>SEO keyword planner</option>
+              <option>Batch listing tools</option>
+              <option>CSV export</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Get Early Access</button>
+          <p class="form-status" id="waitlistStatus" role="status" aria-live="polite"></p>
+          <p class="form-note">
+            Static MVP note: submissions are saved in this browser for testing. Connect this
+            form to Tally, Airtable, or Supabase before sending paid traffic.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>SellerMargin</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <span>Etsy fee defaults are estimates. Sellers should confirm final fees in Etsy dashboard.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
