@@ -2,6 +2,12 @@
 
 This is a static MVP for an Etsy Profit Calculator + AI Listing Generator.
 
+Live preview:
+
+```text
+https://rockbush.github.io/etys-test/
+```
+
 ## Files
 
 - `index.html`: main website page
@@ -9,6 +15,7 @@ This is a static MVP for an Etsy Profit Calculator + AI Listing Generator.
 - `script.js`: profit calculator and demo listing generator logic
 - `privacy.html`: simple privacy policy for the static MVP
 - `terms.html`: simple terms page for the static MVP
+- `vercel.json`: static deployment settings for Vercel
 
 ## Current Features
 
