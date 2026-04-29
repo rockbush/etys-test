@@ -46,8 +46,15 @@ Google Analytics 4 is configured with measurement ID `G-8YVQJDS0BV`.
 Tracked events:
 
 - `calculator_used`
+- `calculator_viewed`
+- `listing_viewed`
 - `listing_generated`
+- `pricing_viewed`
+- `waitlist_viewed`
+- `hero_calculator_clicked`
+- `hero_listing_clicked`
 - `cta_clicked`
+- `waitlist_submit_clicked`
 - `waitlist_submitted`
 - `waitlist_submit_failed`
 

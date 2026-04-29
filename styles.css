@@ -148,6 +148,13 @@ h3 {
   line-height: 1.65;
 }
 
+.section-intro {
+  max-width: 620px;
+  margin: -2px 0 18px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

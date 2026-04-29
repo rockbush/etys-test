@@ -15,6 +15,12 @@ const fields = [
 ];
 
 let calculatorTracked = false;
+const sectionEvents = [
+  ["calculator", "calculator_viewed"],
+  ["listing", "listing_viewed"],
+  ["pricing", "pricing_viewed"],
+  ["waitlist", "waitlist_viewed"],
+];
 
 function trackEvent(name, params = {}) {
   if (typeof window.gtag !== "function") {
@@ -41,6 +47,41 @@ function escapeHTML(text) {
       "'": "&#039;",
     };
     return map[char];
+  });
+}
+
+function trackSectionViews() {
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const eventName = entry.target.dataset.viewEvent;
+        if (eventName) {
+          trackEvent(eventName);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.45,
+    }
+  );
+
+  sectionEvents.forEach(([id, eventName]) => {
+    const section = document.getElementById(id);
+    if (!section) {
+      return;
+    }
+
+    section.dataset.viewEvent = eventName;
+    observer.observe(section);
   });
 }
 
@@ -233,5 +274,12 @@ document.querySelectorAll('a[href="#pricing"], a[href="#waitlist"]').forEach((li
   });
 });
 
+document.querySelectorAll("[data-track]").forEach((element) => {
+  element.addEventListener("click", () => {
+    trackEvent(element.dataset.track);
+  });
+});
+
+trackSectionViews();
 calculateProfit();
 generateListing();

@@ -76,8 +76,8 @@
             descriptions, and product copy from the same profit data.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#calculator">Calculate Profit</a>
-            <a class="button secondary" href="#listing">Generate Listing</a>
+            <a class="button primary" href="#calculator" data-track="hero_calculator_clicked">Calculate Profit</a>
+            <a class="button secondary" href="#listing" data-track="hero_listing_clicked">Generate Listing</a>
           </div>
         </div>
         <div class="hero-panel" aria-label="Profit preview">
@@ -110,6 +110,7 @@
           <div class="section-heading">
             <p class="eyebrow">Free tool</p>
             <h2>Etsy Profit Calculator</h2>
+            <p class="section-intro">Change any number to see your real margin instantly.</p>
           </div>
 
           <form class="calculator-form" id="profitForm">
@@ -319,7 +320,7 @@
               <option>CSV export</option>
             </select>
           </label>
-          <button class="button primary" type="submit">Get Early Access</button>
+          <button class="button primary" type="submit" data-track="waitlist_submit_clicked">Get Early Access</button>
           <p class="form-status" id="waitlistStatus" role="status" aria-live="polite"></p>
           <p class="form-note">
             Static MVP note: submissions are saved in this browser for testing. Connect this
