@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rockbush.github.io/etys-test/sitemap.xml

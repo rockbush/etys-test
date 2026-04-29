@@ -15,6 +15,12 @@ https://rockbush.github.io/etys-test/
 - `script.js`: profit calculator and demo listing generator logic
 - `privacy.html`: simple privacy policy for the static MVP
 - `terms.html`: simple terms page for the static MVP
+- `etsy-profit-calculator.html`: SEO landing page for Etsy profit calculator searches
+- `etsy-fee-calculator.html`: SEO landing page for Etsy fee calculator searches
+- `printify-etsy-profit-calculator.html`: SEO landing page for POD calculator searches
+- `etsy-listing-generator.html`: SEO landing page for AI Etsy listing generator searches
+- `sitemap.xml`: search engine sitemap
+- `robots.txt`: crawler instructions
 - `vercel.json`: static deployment settings for Vercel
 - `MARKETING_TEST_PLAN.md`: 7-day validation plan and promotion copy
 - `ACCOUNT_SETUP_GUIDE.md`: account setup guide for Reddit, Pinterest, and Facebook outreach
@@ -31,6 +37,7 @@ https://rockbush.github.io/etys-test/
 - Privacy Policy and Terms pages
 - Basic SEO, Open Graph, Twitter Card, and SoftwareApplication schema metadata
 - Google Analytics 4 tracking with core conversion events
+- SEO landing pages for calculator and listing generator keywords
 
 ## Waitlist Form
 

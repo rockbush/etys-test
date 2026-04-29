@@ -248,7 +248,12 @@ async function handleWaitlist(event) {
 }
 
 fields.forEach((id) => {
-  document.getElementById(id).addEventListener("input", () => {
+  const field = document.getElementById(id);
+  if (!field) {
+    return;
+  }
+
+  field.addEventListener("input", () => {
     calculateProfit();
     if (!calculatorTracked) {
       calculatorTracked = true;
@@ -259,11 +264,18 @@ fields.forEach((id) => {
   });
 });
 
-document.getElementById("generateListing").addEventListener("click", () => {
-  generateListing();
-  trackEvent("listing_generated");
-});
-document.getElementById("waitlistForm").addEventListener("submit", handleWaitlist);
+const generateListingButton = document.getElementById("generateListing");
+if (generateListingButton) {
+  generateListingButton.addEventListener("click", () => {
+    generateListing();
+    trackEvent("listing_generated");
+  });
+}
+
+const waitlistForm = document.getElementById("waitlistForm");
+if (waitlistForm) {
+  waitlistForm.addEventListener("submit", handleWaitlist);
+}
 
 document.querySelectorAll('a[href="#pricing"], a[href="#waitlist"]').forEach((link) => {
   link.addEventListener("click", () => {
@@ -281,5 +293,9 @@ document.querySelectorAll("[data-track]").forEach((element) => {
 });
 
 trackSectionViews();
-calculateProfit();
-generateListing();
+if (document.getElementById("netProfit")) {
+  calculateProfit();
+}
+if (document.getElementById("listingOutput")) {
+  generateListing();
+}
