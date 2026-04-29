@@ -17,6 +17,7 @@ https://rockbush.github.io/etys-test/
 - `terms.html`: simple terms page for the static MVP
 - `vercel.json`: static deployment settings for Vercel
 - `MARKETING_TEST_PLAN.md`: 7-day validation plan and promotion copy
+- `ACCOUNT_SETUP_GUIDE.md`: account setup guide for Reddit, Pinterest, and Facebook outreach
 
 ## Current Features
 
