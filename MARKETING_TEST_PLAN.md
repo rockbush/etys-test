@@ -183,6 +183,10 @@ What would you add or change?
 
 ## Pinterest Pin Ideas
 
+Published pins:
+
+- Free Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478107561/
+
 Pin title options:
 
 - Free Etsy Profit Calculator
