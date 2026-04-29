@@ -186,6 +186,7 @@ What would you add or change?
 Published pins:
 
 - Free Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478107561/
+- Calculate Etsy Profit Before You List: https://www.pinterest.com/pin/1100356121478113228/
 
 Pin title options:
 
