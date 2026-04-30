@@ -192,6 +192,7 @@ Published pins:
 - Free Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478107561/
 - Calculate Etsy Profit Before You List: https://www.pinterest.com/pin/1100356121478113228/
 - Etsy Fee Calculator: https://www.pinterest.com/pin/1100356121478164421/
+- Printify Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478170386/
 
 Pin title options:
 
