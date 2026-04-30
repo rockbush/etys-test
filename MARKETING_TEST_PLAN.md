@@ -101,6 +101,10 @@ Actions:
 
 ## Reddit / Community Post Variants
 
+Published Reddit posts:
+
+- POD cost research post: https://www.reddit.com/r/EtsyCommunity/comments/1szjn9g/what_costs_do_you_include_when_checking_pod/
+
 ### Feedback Version
 
 Title:
