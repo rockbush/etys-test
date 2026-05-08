@@ -104,6 +104,7 @@ Actions:
 Published Reddit posts:
 
 - POD cost research post: https://www.reddit.com/r/EtsyCommunity/comments/1szjn9g/what_costs_do_you_include_when_checking_pod/
+- Etsy title and tags research post: https://www.reddit.com/r/EtsySellers/comments/1t6vj1j/how_do_you_write_etsy_titles_and_tags_without/
 
 ### Feedback Version
 
@@ -194,6 +195,10 @@ Published pins:
 - Etsy Fee Calculator: https://www.pinterest.com/pin/1100356121478164421/
 - Printify Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478170386/
 
+Next pin asset:
+
+- Etsy Listing Generator: `assets/pinterest-etsy-listing-generator.png`
+
 Pin title options:
 
 - Free Etsy Profit Calculator
@@ -201,6 +206,8 @@ Pin title options:
 - Etsy Pricing Calculator for Handmade Sellers
 - Stop Guessing Your Etsy Profit
 - Etsy Fee and Profit Calculator
+- Free Etsy Listing Generator
+- Etsy Title and Tags Generator
 
 Pin description options:
 
@@ -220,6 +227,10 @@ Calculate Etsy Profit Before You List
 
 ```text
 Are Etsy Fees Eating Your Margin?
+```
+
+```text
+Free Etsy Listing Generator
 ```
 
 ## TikTok / YouTube Shorts Script
