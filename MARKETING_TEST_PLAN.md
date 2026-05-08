@@ -194,10 +194,11 @@ Published pins:
 - Calculate Etsy Profit Before You List: https://www.pinterest.com/pin/1100356121478113228/
 - Etsy Fee Calculator: https://www.pinterest.com/pin/1100356121478164421/
 - Printify Etsy Profit Calculator: https://www.pinterest.com/pin/1100356121478170386/
+- Etsy Listing Generator: https://www.pinterest.com/pin/1100356121478684490/
 
 Next pin asset:
 
-- Etsy Listing Generator: `assets/pinterest-etsy-listing-generator.png`
+- None currently queued.
 
 Pin title options:
 
